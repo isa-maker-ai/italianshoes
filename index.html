@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITALIAN SHOES - Минимализм и Качество</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">ITALIAN SHOES</h1>
+                <nav class="nav">
+                    <a href="#catalog" class="nav-link">Каталог</a>
+                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Итальянская обувь</h2>
+                <p>Качество. Минимализм. Долговечность.</p>
+                <button class="cta-button" onclick="scrollToCatalog()">Перейти в каталог</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Наша коллекция</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="openProduct(1)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Классические мужские туфли</div>
+                    </div>
+                    <h3>Мужские оксфорды</h3>
+                    <p class="price">€150</p>
+                    <p class="description">Черные классические туфли из натуральной кожи</p>
+                </div>
+
+                <div class="product-card" onclick="openProduct(2)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Женские лоферы</div>
+                    </div>
+                    <h3>Женские лоферы</h3>
+                    <p class="price">€140</p>
+                    <p class="description">Элегантные лоферы коричневого цвета</p>
+                </div>
+
+                <div class="product-card" onclick="openProduct(3)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Кроссовки минимальные</div>
+                    </div>
+                    <h3>Минималистичные кроссовки</h3>
+                    <p class="price">€130</p>
+                    <p class="description">Белые кроссовки из натуральных материалов</p>
+                </div>
+
+                <div class="product-card" onclick="openProduct(4)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Ботинки демисезонные</div>
+                    </div>
+                    <h3>Демисезонные ботинки</h3>
+                    <p class="price">€180</p>
+                    <p class="description">Удобные ботинки для любой погоды</p>
+                </div>
+
+                <div class="product-card" onclick="openProduct(5)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Сандалии летние</div>
+                    </div>
+                    <h3>Летние сандалии</h3>
+                    <p class="price">€95</p>
+                    <p class="description">Легкие сандалии для жаркого времени</p>
+                </div>
+
+                <div class="product-card" onclick="openProduct(6)">
+                    <div class="product-image">
+                        <div class="image-placeholder">Деловые туфли</div>
+                    </div>
+                    <h3>Деловые туфли</h3>
+                    <p class="price">€165</p>
+                    <p class="description">Профессиональные туфли для офиса</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О нас</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Философия минимализма</h3>
+                    <p>Мы верим в простоту и функциональность. Каждая пара обуви создана с вниманием к деталям и использованием только натуральных материалов.</p>
+                    <p>Итальянская традиция мастерства в каждом шаге.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>500+</h4>
+                        <p>Довольных клиентов</p>
+                    </div>
+                    <div class="stat">
+                        <h4>15</h4>
+                        <p>Лет опыта</p>
+                    </div>
+                    <div class="stat">
+                        <h4>100%</h4>
+                        <p>Натуральные материалы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Связаться с нами</h2>
+            <div class="contact-content">
+                <form class="contact-form" onsubmit="submitForm(event)">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш email" required>
+                    <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+                    <button type="submit" class="submit-button">Отправить</button>
+                </form>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> info@italianshoes.it</p>
+                    <p><strong>Телефон:</strong> +39 123 456 7890</p>
+                    <p><strong>Адрес:</strong> Via Roma, 42, Roma, Italia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Italian Shoes. Все права защищены. | Минимализм и Качество</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для продукта -->
+    <div id="productModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
